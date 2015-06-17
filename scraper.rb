@@ -19,7 +19,7 @@ puts 'Error:'
 p page.at('#ctl00_MainBodyContent_mErrorPanel')
 
 puts 'Content:'
-p page.at('html').to_s
+puts page.to_s
 
 # Write out to the sqlite database using scraperwiki library
 # ScraperWiki.save_sqlite(["name"], {"name" => "susan", "occupation" => "software developer"})
