@@ -13,11 +13,16 @@ require 'mechanize'
 agent = Mechanize.new
 
 # Read in a page
-agent.get("https://epathway.monash.vic.gov.au/ePathway/Production/Web/default.aspx")
-page = agent.get("https://epathway.monash.vic.gov.au/ePathway/Production/Web/GeneralEnquiry/EnquirySummaryView.aspx")
+page = agent.get(
+    uri = 'https://epathway.monash.vic.gov.au/ePathway/Production/Web/GeneralEnquiry/EnquirySummaryView.aspx',
+    headers = {
+      'Referer' => 'https://epathway.monash.vic.gov.au/ePathway/Production/Web/default.aspx',
+    })
 
-# Find somehing on the page using css selectors
+puts 'Error:'
 p page.at('#ctl00_MainBodyContent_mErrorPanel')
+
+puts 'Content:'
 p page.at('.ContentPanelHeading')
 
 # Write out to the sqlite database using scraperwiki library
