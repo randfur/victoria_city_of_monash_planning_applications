@@ -13,7 +13,7 @@ require 'mechanize'
 agent = Mechanize.new
 
 page = agent.get('https://epathway.monash.vic.gov.au/ePathway/Production/Web/Default.aspx')
-page.click('planning applications that we are currently advertising') # Can't access page directly, need to follow link.
+agent.click('planning applications that we are currently advertising') # Can't access page directly, need to follow link.
 
 puts 'Error:'
 p page.at('#ctl00_MainBodyContent_mErrorPanel')
