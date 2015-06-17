@@ -13,7 +13,7 @@ require 'mechanize'
 agent = Mechanize.new
 
 # Read in a page
-# page = agent.get("https://epathway.monash.vic.gov.au/ePathway/Production/Web/default.aspx")
+agent.get("https://epathway.monash.vic.gov.au/ePathway/Production/Web/default.aspx")
 page = agent.get("https://epathway.monash.vic.gov.au/ePathway/Production/Web/GeneralEnquiry/EnquirySummaryView.aspx")
 
 # Find somehing on the page using css selectors
